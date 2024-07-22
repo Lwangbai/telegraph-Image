@@ -80,7 +80,7 @@ export async function onRequestPost(context) {
         if (responseData.code === 200) {
             const _URL = responseData.data;
             if (env.IMG) {
-                await insertImageData(env.IMG, _URL, Referer, clientIP, 5, formattedDate);
+                await insertImageData(env.IMG, _URL, Referer, clientIP, 50, formattedDate);
             }
 
             return Response.json({
@@ -99,7 +99,7 @@ export async function onRequestPost(context) {
 
     } catch (e) {
         console.log(e);
-        await insertImageData(env.IMG, responseData.result, Referer, clientIP, 5, formattedDate);
+        await insertImageData(env.IMG, responseData.result, Referer, clientIP, 50, formattedDate);
     }
 
 
